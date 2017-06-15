@@ -37,7 +37,7 @@
     "react-dom": "^15.5.4"
   },
   "dependencies": {
-    "svg-injector": "git+ssh://git@github.com/abruzzihraig/svg-injector.git"
+    "svg-injector": "git+ssh://git@github.com/abruzzihraig/SVGInjector.git"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
