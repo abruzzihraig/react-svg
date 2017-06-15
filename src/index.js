@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import ReactDOMServer from 'react-dom/server'
-import deepEqual from 'deep-equal'
 
 // See: https://github.com/webpack/react-starter/issues/37
 const isBrowser = typeof window !== 'undefined'
 const SVGInjector = isBrowser ? require('svg-injector') : undefined
+
+function jsonEqual(a,b) {
+  return JSON.stringify(a) === JSON.stringify(b);
+}
 
 export default class ReactSVG extends Component {
 
@@ -67,7 +70,7 @@ export default class ReactSVG extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return !deepEqual(nextProps, this.props)
+    return !jsonEqual(nextProps, this.props)
   }
 
   componentWillUpdate() {
