@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import ReactDOMServer from 'react-dom/server'
+import deepEqual from 'deep-equal'
 
 // See: https://github.com/webpack/react-starter/issues/37
 const isBrowser = typeof window !== 'undefined'
@@ -65,13 +66,13 @@ export default class ReactSVG extends Component {
     this.container.removeChild(this.container.firstChild)
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.removeSVG()
-    this.renderSVG(nextProps)
+  shouldComponentUpdate(nextProps) {
+    return !deepEqual(nextProps, this.props)
   }
 
-  shouldComponentUpdate() {
-    return false
+  componentWillUpdate() {
+    this.removeSVG()
+    this.renderSVG(this.props)
   }
 
   render() {

@@ -37,6 +37,7 @@
     "react-dom": "^15.5.4"
   },
   "dependencies": {
+    "deep-equal": "^1.0.1",
     "svg-injector": "git+ssh://git@github.com/abruzzihraig/SVGInjector.git"
   },
   "devDependencies": {
