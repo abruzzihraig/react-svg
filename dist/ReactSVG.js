@@ -156,9 +156,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  }, {
 	    key: 'componentWillUpdate',
-	    value: function componentWillUpdate() {
+	    value: function componentWillUpdate(nextProps) {
 	      this.removeSVG();
-	      this.renderSVG(this.props);
+	      this.renderSVG(nextProps);
 	    }
 	  }, {
 	    key: 'render',

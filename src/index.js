@@ -73,9 +73,9 @@ export default class ReactSVG extends Component {
     return !jsonEqual(nextProps, this.props)
   }
 
-  componentWillUpdate() {
+  componentWillUpdate(nextProps) {
     this.removeSVG()
-    this.renderSVG(this.props)
+    this.renderSVG(nextProps)
   }
 
   render() {
